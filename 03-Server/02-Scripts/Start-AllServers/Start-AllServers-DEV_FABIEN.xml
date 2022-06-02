@@ -1,0 +1,25 @@
+<Configuration>
+	<Servers Environnement="DEV_FABIEN">
+		<Server Name="LoginServer" AutoStart="1">
+			<ExecutableHost>127.0.0.1</ExecutableHost>
+			<DarkRiftExecutionPath>D:\Unity Prototype\RTSOnline-Prototype\03-Server\03-RTSConsoleServer\RTS.Server.Console.exe</DarkRiftExecutionPath>
+			<ServerConfigurationFile>D:\Unity Prototype\RTSOnline-Prototype\03-Server\01-Servers\LoginServer\DarkRift-LoginServer-DEV_FABIEN.config</ServerConfigurationFile>
+			<InitializationPluginName>LoginServerInitializationPlugin</InitializationPluginName>	
+			<ServerCustomConfigurationFile>D:\Unity Prototype\RTSOnline-Prototype\03-Server\01-Servers\LoginServer\Custom-LoginServer-DEV_FABIEN.config</ServerCustomConfigurationFile>
+		</Server>
+		<Server Name="WorldServer" AutoStart="1">
+			<ExecutableHost>127.0.0.1</ExecutableHost>
+			<DarkRiftExecutionPath>D:\Unity Prototype\RTSOnline-Prototype\03-Server\03-RTSConsoleServer\RTS.Server.Console.exe</DarkRiftExecutionPath>
+			<ServerConfigurationFile>D:\Unity Prototype\RTSOnline-Prototype\03-Server\01-Servers\WorldServer\DarkRift-WorldServer-DEV_FABIEN.config</ServerConfigurationFile>
+			<InitializationPluginName>WorldServerInitializationPlugin</InitializationPluginName>
+			<ServerCustomConfigurationFile>D:\Unity Prototype\RTSOnline-Prototype\03-Server\01-Servers\WorldServer\Custom-WorldServer-DEV_FABIEN.config</ServerCustomConfigurationFile>
+		</Server>
+		<Server Name="GameServer1" AutoStart="1">
+			<ExecutableHost>127.0.0.1</ExecutableHost>
+			<DarkRiftExecutionPath>D:\Unity Prototype\RTSOnline-Prototype\03-Server\03-RTSConsoleServer\RTS.Server.Console.exe</DarkRiftExecutionPath>
+			<ServerConfigurationFile>D:\Unity Prototype\RTSOnline-Prototype\03-Server\01-Servers\GameServer1\DarkRift-GameServer1-DEV_FABIEN.config</ServerConfigurationFile>
+			<InitializationPluginName>GameServerInitializationPlugin</InitializationPluginName>
+			<ServerCustomConfigurationFile>D:\Unity Prototype\RTSOnline-Prototype\03-Server\01-Servers\GameServer1\Custom-GameServer1-DEV_FABIEN.config</ServerCustomConfigurationFile>	
+		</Server>
+	</Servers>
+</Configuration>

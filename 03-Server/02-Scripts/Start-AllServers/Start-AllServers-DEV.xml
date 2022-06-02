@@ -1,0 +1,19 @@
+<Configuration>
+	<Servers Environnement="DEV">
+		<Server Name="LoginServer" AutoStart="1">
+			<ExecutableHost>127.0.0.1</ExecutableHost>
+			<DarkRiftExecutionPath>D:\01-Projets\Unity\RTSOnline-Prototype\03-Server\00-DarkRiftServerExecutable\RTS.Server.Console.exe</DarkRiftExecutionPath>
+			<ServerConfigurationFile>D:\01-Projets\Unity\RTSOnline-Prototype\03-Server\01-Servers\LoginServer\LoginServer-DEV.config</ServerConfigurationFile>
+		</Server>
+		<Server Name="WorldServer" AutoStart="1">
+			<ExecutableHost>127.0.0.1</ExecutableHost>
+			<DarkRiftExecutionPath>D:\01-Projets\Unity\RTSOnline-Prototype\03-Server\00-DarkRiftServerExecutable\RTS.Server.Console.exe</DarkRiftExecutionPath>
+			<ServerConfigurationFile>D:\01-Projets\Unity\RTSOnline-Prototype\03-Server\01-Servers\WorldServer\WorldServer-DEV.config</ServerConfigurationFile>
+		</Server>
+		<Server Name="GameServer1" AutoStart="1">
+			<ExecutableHost>127.0.0.1</ExecutableHost>
+			<DarkRiftExecutionPath>D:\01-Projets\Unity\RTSOnline-Prototype\03-Server\00-DarkRiftServerExecutable\DarkRift.Server.Console.exe</DarkRiftExecutionPath>
+			<ServerConfigurationFile>D:\01-Projets\Unity\RTSOnline-Prototype\03-Server\01-Servers\GameServer1\GameServer1-DEV.config</ServerConfigurationFile>
+		</Server>
+	</Servers>
+</Configuration>

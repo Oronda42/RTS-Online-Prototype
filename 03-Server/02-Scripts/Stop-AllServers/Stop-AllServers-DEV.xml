@@ -1,0 +1,8 @@
+<Configuration>
+	<Hosts Environnement="DEV">
+		<Host name="Localhost">
+			<IP>127.0.0.1</IP>
+			<ExecutableName>RTS.DarkRift.Console.Server</ExecutableName>
+		</Host>
+	</Hosts>
+</Configuration>

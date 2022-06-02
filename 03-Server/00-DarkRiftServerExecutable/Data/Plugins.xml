@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<plugins nextID="23">
+  <plugin id="0" name="HelpCommand" version="1.0.0" />
+  <plugin id="1" name="PluginController" version="1.0.0" />
+  <plugin id="2" name="Sniffer" version="1.0.0" />
+  <plugin id="3" name="DemoCommand" version="1.0.0" />
+  <plugin id="4" name="MessageCommand" version="1.0.0" />
+  <plugin id="5" name="MockCommand" version="1.0.0" />
+  <plugin id="6" name="DebugCommand" version="1.0.0" />
+  <plugin id="7" name="ClientCommand" version="1.0.0" />
+  <plugin id="8" name="ObjectCacheMonitor" version="1.0.0" />
+  <plugin id="9" name="ServerStartManager" version="1.0.0" />
+  <plugin id="10" name="ConnectionManagerPlugin" version="1.0.0" />
+  <plugin id="11" name="PlayerMapManagerPlugin" version="1.0.0" />
+  <plugin id="12" name="ConnectionManager" version="1.0.0" />
+  <plugin id="13" name="PlayerMapManager" version="1.0.0" />
+  <plugin id="14" name="PlayerConsumableResourcesManager" version="1.0.0" />
+  <plugin id="15" name="PlayerBuildingManager" version="1.0.0" />
+  <plugin id="16" name="ClockManager" version="1.0.0" />
+  <plugin id="17" name="PlayerResourceManager" version="1.0.0" />
+  <plugin id="18" name="SchedulerManager" version="1.0.0" />
+  <plugin id="19" name="PlayermarketManager" version="1.0.0" />
+  <plugin id="20" name="PlayerMarketManager" version="1.0.0" />
+  <plugin id="21" name="PlayerCenterManager" version="1.0.0" />
+  <plugin id="22" name="PlayerCityManager" version="1.0.0" />
+</plugins>

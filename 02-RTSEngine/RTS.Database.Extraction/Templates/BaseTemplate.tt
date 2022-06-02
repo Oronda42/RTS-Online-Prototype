@@ -1,0 +1,29 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Globalization" #>
+<#@ Assembly Name="$(SolutionDir)RTS.Models\bin\Debug\RTS.Models.dll" #>
+<#@ Assembly Name="$(SolutionDir)RTS.Configuration\bin\Debug\RTS.Configuration.dll" #>
+<#
+string ToPascalCase(string text)
+{ 
+    return CultureInfo.InvariantCulture.TextInfo
+        .ToTitleCase(text.ToLowerInvariant())
+        .Replace("-", 
+		"")
+        .Replace("_", "")
+        .Replace(" ", "");
+}
+
+string ToString(bool pValue)
+{
+    if (pValue == true)
+        return "true";
+    else
+        return "false";
+}
+
+
+#>

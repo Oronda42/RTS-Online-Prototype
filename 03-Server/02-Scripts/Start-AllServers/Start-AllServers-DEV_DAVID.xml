@@ -1,0 +1,25 @@
+<Configuration>
+	<Servers Environnement="DEV_DAVID">
+		<Server Name="LoginServer" AutoStart="1">
+			<ExecutableHost>127.0.0.1</ExecutableHost>
+			<DarkRiftExecutionPath>D:\01-Projets\Unity\RTSOnline-Prototype\03-Server\03-RTSConsoleServer\RTS.Server.Console.exe</DarkRiftExecutionPath>
+			<ServerConfigurationFile>D:\01-Projets\Unity\RTSOnline-Prototype\03-Server\01-Servers\LoginServer\DarkRift-LoginServer-DEV_DAVID.config</ServerConfigurationFile>
+			<InitializationPluginName>LoginServerInitializationPlugin</InitializationPluginName>
+			<ServerCustomConfigurationFile>D:\01-Projets\Unity\RTSOnline-Prototype\03-Server\01-Servers\LoginServer\Custom-LoginServer-DEV_DAVID.config</ServerCustomConfigurationFile>
+		</Server>
+		<Server Name="WorldServer" AutoStart="1">
+			<ExecutableHost>127.0.0.1</ExecutableHost>
+			<DarkRiftExecutionPath>D:\01-Projets\Unity\RTSOnline-Prototype\03-Server\03-RTSConsoleServer\RTS.Server.Console.exe</DarkRiftExecutionPath>
+			<ServerConfigurationFile>D:\01-Projets\Unity\RTSOnline-Prototype\03-Server\01-Servers\WorldServer\DarkRift-WorldServer-DEV_DAVID.config</ServerConfigurationFile>
+			<InitializationPluginName>WorldServerInitializationPlugin</InitializationPluginName>
+			<ServerCustomConfigurationFile>D:\01-Projets\Unity\RTSOnline-Prototype\03-Server\01-Servers\WorldServer\Custom-WorldServer-DEV_DAVID.config</ServerCustomConfigurationFile>
+		</Server>
+		<Server Name="GameServer1" AutoStart="1">
+			<ExecutableHost>127.0.0.1</ExecutableHost>
+			<DarkRiftExecutionPath>D:\01-Projets\Unity\RTSOnline-Prototype\03-Server\03-RTSConsoleServer\RTS.Server.Console.exe</DarkRiftExecutionPath>
+			<ServerConfigurationFile>D:\01-Projets\Unity\RTSOnline-Prototype\03-Server\01-Servers\GameServer1\DarkRift-GameServer1-DEV_DAVID.config</ServerConfigurationFile>
+			<InitializationPluginName>GameServerInitializationPlugin</InitializationPluginName>
+			<ServerCustomConfigurationFile>D:\01-Projets\Unity\RTSOnline-Prototype\03-Server\01-Servers\GameServer1\Custom-GameServer1-DEV_DAVID.config</ServerCustomConfigurationFile>
+		</Server>
+	</Servers>
+</Configuration>

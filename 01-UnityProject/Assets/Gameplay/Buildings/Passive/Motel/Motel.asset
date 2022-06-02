@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa26f69003e01484b83e2b13a8f6383c, type: 3}
+  m_Name: Motel
+  m_EditorClassIdentifier: 
+  playerBuildingPrefab: {fileID: 1627400270588123582, guid: 6e55e0c73e71dee4b90d3d58d16ea317,
+    type: 3}
+  icon: {fileID: 21300000, guid: 4422fd95f39a551489a4f25ef908eeb4, type: 3}
+  modelPassive:
+    id: 9
+    name: Motel
+    buildingType:
+      id: 3
+    constructionTime: 21600
+    cost:
+      id: 21
+      resources:
+      - resourceId: 6
+        amount: 2500
+        maximum: -1
+        used: 0
+    levels:
+    - id: 1
+      cost:
+        id: 0
+        resources: []
+      persistentBagNeeded:
+        id: 27
+        resources:
+        - resourceId: 7
+          amount: 1
+          maximum: -1
+          used: 0
+      persistentBag:
+        id: 26
+        resources:
+        - resourceId: 8
+          amount: 5
+          maximum: -1
+          used: 0
+      secondsToConsume: 300
+      consumptionBag:
+        id: 0
+        resources: []

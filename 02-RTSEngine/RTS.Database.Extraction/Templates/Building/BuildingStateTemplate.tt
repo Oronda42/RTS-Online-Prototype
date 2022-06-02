@@ -1,0 +1,48 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ include file="../BaseTemplate.tt" once="true"#>
+<#@ parameter type="System.Collections.Generic.List<RTS.Models.BuildingStateModel>" name="BuildingStates" #>
+using System.Collections.Generic;
+
+namespace RTS.Models
+{
+    public static class BuildingStateData
+    {
+		public static List<BuildingStateModel> GetAllStates(){
+		
+			return new List<BuildingStateModel>{ 
+<# for (int i = 0; i < BuildingStates.Count; i++) { #>
+				BuildingStateData.<#= ToPascalCase(BuildingStates[i].name) #>,
+<# } #>				
+			};
+		}
+
+		public static BuildingStateModel GetStateById(int pId)
+		{
+			switch (pId)
+			{
+<# for (int i = 0; i < BuildingStates.Count; i++) { #>
+				case <#= BuildingStates[i].id #> :
+					return BuildingStateData.<#= ToPascalCase(BuildingStates[i].name) #>;
+<# } #>
+				default:
+					return null;
+			}
+        }
+
+<# for (int i = 0; i < BuildingStates.Count; i++) { #>
+		public static BuildingStateModel <#= ToPascalCase(BuildingStates[i].name) #>
+        {
+            get { return new BuildingStateModel( 
+                <#= BuildingStates[i].id #>,
+                "<#= BuildingStates[i].name #>",
+				<#= ToString(BuildingStates[i].canProduce) #>,
+				<#= ToString(BuildingStates[i].canActivate) #>,
+				<#= ToString(BuildingStates[i].canRepair) #>);
+            }
+        }
+
+<# } #>	
+		
+	}
+}

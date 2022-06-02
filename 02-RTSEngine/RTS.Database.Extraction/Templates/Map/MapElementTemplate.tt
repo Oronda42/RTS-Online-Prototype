@@ -1,0 +1,50 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ include file="../BaseTemplate.tt" once="true"#>
+<#@ parameter type="System.Collections.Generic.List<RTS.Models.MapElementModel>" name="Elements" #>
+using System.Collections.Generic;
+
+namespace RTS.Models
+{
+    public static class MapElementData
+    {
+		public static List<MapElementModel> GetAllElements(){
+		
+			return new List<MapElementModel>{ 
+<# for (int i = 0; i < Elements.Count; i++) { #>
+				MapElementData.<#= ToPascalCase(Elements[i].Name) #>,
+<# } #>				
+			};
+		}
+
+		public static MapElementModel GetTypeById(int pId)
+		{
+			switch (pId)
+			{
+<# for (int i = 0; i < Elements.Count; i++) { #>
+				case <#= Elements[i].Id #> :
+					return MapElementData.<#= ToPascalCase(Elements[i].Name) #>;
+<# } #>
+				default:
+					return null;
+			}
+        }
+
+<# for (int i = 0; i < Elements.Count; i++) { #>
+		public static MapElementModel <#= ToPascalCase(Elements[i].Name) #>
+        {
+            get { return new MapElementModel{
+                Id = <#= Elements[i].Id #>,
+                Name = "<#= Elements[i].Name #>",
+				Type = new MapElementTypeModel{
+					Id = <#= Elements[i].Type.Id #>,
+					Name = "<#= Elements[i].Type.Name #>",
+					},
+				};
+            }
+        }
+
+<# } #>	
+		
+	}
+}

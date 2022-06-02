@@ -1,0 +1,25 @@
+<Configuration>
+	<Servers Environnement="DEV_DAVID_PORTABLE">
+		<Server Name="LoginServer" AutoStart="1">
+			<ExecutableHost>127.0.0.1</ExecutableHost>
+			<DarkRiftExecutionPath>D:\05-Developpement\Personnal Projects\RTSOnline-Prototype\03-Server\03-RTSConsoleServer\RTS.Server.Console.exe</DarkRiftExecutionPath>
+			<ServerConfigurationFile>D:\05-Developpement\Personnal Projects\RTSOnline-Prototype\03-Server\01-Servers\LoginServer\DarkRift-LoginServer-DEV_DAVID_PORTABLE.config</ServerConfigurationFile>
+			<InitializationPluginName>LoginServerInitializationPlugin</InitializationPluginName>
+			<ServerCustomConfigurationFile>D:\05-Developpement\Personnal Projects\RTSOnline-Prototype\03-Server\01-Servers\LoginServer\Custom-LoginServer-DEV_DAVID_PORTABLE.config</ServerCustomConfigurationFile>
+		</Server>
+		<Server Name="WorldServer" AutoStart="1">
+			<ExecutableHost>127.0.0.1</ExecutableHost>
+			<DarkRiftExecutionPath>D:\05-Developpement\Personnal Projects\RTSOnline-Prototype\03-Server\03-RTSConsoleServer\RTS.Server.Console.exe</DarkRiftExecutionPath>
+			<ServerConfigurationFile>D:\05-Developpement\Personnal Projects\RTSOnline-Prototype\03-Server\01-Servers\WorldServer\DarkRift-WorldServer-DEV_DAVID_PORTABLE.config</ServerConfigurationFile>
+			<InitializationPluginName>WorldServerInitializationPlugin</InitializationPluginName>
+			<ServerCustomConfigurationFile>D:\05-Developpement\Personnal Projects\RTSOnline-Prototype\03-Server\01-Servers\WorldServer\Custom-WorldServer-DEV_DAVID_PORTABLE.config</ServerCustomConfigurationFile>
+		</Server>
+		<Server Name="GameServer1" AutoStart="0">
+			<ExecutableHost>127.0.0.1</ExecutableHost>
+			<DarkRiftExecutionPath>D:\05-Developpement\Personnal Projects\RTSOnline-Prototype\03-Server\03-RTSConsoleServer\RTS.Server.Console.exe</DarkRiftExecutionPath>
+			<ServerConfigurationFile>D:\05-Developpement\Personnal Projects\RTSOnline-Prototype\03-Server\01-Servers\GameServer1\DarkRift-GameServer1-DEV_DAVID_PORTABLE.config</ServerConfigurationFile>
+			<InitializationPluginName>GameServerInitializationPlugin</InitializationPluginName>
+			<ServerCustomConfigurationFile>D:\05-Developpement\Personnal Projects\RTSOnline-Prototype\03-Server\01-Servers\GameServer1\Custom-GameServer1-DEV_DAVID_PORTABLE.config</ServerCustomConfigurationFile>
+		</Server>
+	</Servers>
+</Configuration>

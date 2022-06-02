@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 316a54988846d404eafdd9d5b03e8f35, type: 3}
+  m_Name: AniFood factory
+  m_EditorClassIdentifier: 
+  playerBuildingPrefab: {fileID: 1627400270588123582, guid: 85d4fe27ca6f00e46b039102c77ee3c2,
+    type: 3}
+  icon: {fileID: 21300000, guid: 87cedfc5ae805744b8f3105c78548ccb, type: 3}
+  modelProducer:
+    id: 4
+    name: AniFood factory
+    buildingType:
+      id: 2
+    constructionTime: 60
+    cost:
+      id: 10
+      resources:
+      - resourceId: 6
+        amount: 200
+        maximum: -1
+        used: 0
+    defaultResourceIdProduced: 4
+    levels:
+    - id: 1
+      cost:
+        id: 0
+        resources: []
+      persistentBagNeeded:
+        id: 38
+        resources:
+        - resourceId: 7
+          amount: 2
+          maximum: -1
+          used: 0
+      resourceIdProduced: 4
+      consumptionBag:
+        id: 47
+        resources:
+        - resourceId: 1
+          amount: 20
+          maximum: -1
+          used: 0
+      secondsToProduce: 300
+      amountProduced: 10
+    - id: 2
+      cost:
+        id: 11
+        resources:
+        - resourceId: 6
+          amount: 600
+          maximum: -1
+          used: 0
+      persistentBagNeeded:
+        id: 39
+        resources:
+        - resourceId: 7
+          amount: 2
+          maximum: -1
+          used: 0
+      resourceIdProduced: 4
+      consumptionBag:
+        id: 48
+        resources:
+        - resourceId: 1
+          amount: 30
+          maximum: -1
+          used: 0
+      secondsToProduce: 300
+      amountProduced: 15
+    - id: 3
+      cost:
+        id: 12
+        resources:
+        - resourceId: 6
+          amount: 1800
+          maximum: -1
+          used: 0
+      persistentBagNeeded:
+        id: 40
+        resources:
+        - resourceId: 7
+          amount: 3
+          maximum: -1
+          used: 0
+      resourceIdProduced: 4
+      consumptionBag:
+        id: 49
+        resources:
+        - resourceId: 1
+          amount: 40
+          maximum: -1
+          used: 0
+      secondsToProduce: 300
+      amountProduced: 20

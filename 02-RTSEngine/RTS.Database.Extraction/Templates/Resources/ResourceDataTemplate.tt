@@ -1,0 +1,51 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ include file="../BaseTemplate.tt" once="true"#>
+<#@ parameter type="System.Collections.Generic.List<RTS.Models.ResourceModel>" name="Resources" #>
+using System.Collections.Generic;
+
+namespace RTS.Models
+{
+    public static class ResourceData
+    {
+		public static List<ResourceModel> GetAllResources(){
+		
+			return new List<ResourceModel>{ 
+<# for (int i = 0; i < Resources.Count; i++) { #>
+				ResourceData.<#= ToPascalCase(Resources[i].name) #>,
+<# } #>				
+			};
+		}
+
+		public static ResourceModel GetResourceById(int pId)
+		{
+			switch (pId)
+			{
+<# for (int i = 0; i < Resources.Count; i++) { #>
+				case <#= Resources[i].id #> :
+					return ResourceData.<#= ToPascalCase(Resources[i].name) #>;
+<# } #>
+				default:
+					return null;
+			}
+        }
+
+<# for (int i = 0; i < Resources.Count; i++) { #>
+		public static ResourceModel <#= ToPascalCase(Resources[i].name) #>
+        {
+            get { return new ResourceModel{
+                id = <#= Resources[i].id #>,
+                name = "<#= Resources[i].name #>",
+                AvailableInPlayerMap = <#= Resources[i].AvailableInPlayerMap.ToString().ToLower() #>,
+                type = new ResourceTypeModel {
+                    id = <#= Resources[i].type.id #>,
+                    name = "<#= Resources[i].type.name #>"
+                    }
+                };
+            }
+        }
+
+<# } #>	
+		
+	}
+}

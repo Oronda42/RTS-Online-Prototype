@@ -1,0 +1,74 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ include file="../BaseTemplate.tt" once="true"#>
+<#@ parameter type="System.Collections.Generic.List<RTS.Models.MarketResourceRatioModel>" name="MarketRatios" #>
+<#@ parameter type="RTS.Models.MarketModel" name="Market" #>
+using System.Collections.Generic;
+using System.Linq;
+
+namespace RTS.Models
+{
+    public static class MarketData
+    {
+
+	    /// <summary>
+        /// Returns the market
+        /// </summary>
+        /// <returns></returns>
+        public static MarketModel GetMarket()
+        {
+            return new MarketModel
+            {
+                Levels = new List<MarketLevelModel>
+                {
+<# for (int i = 0; i < Market.Levels.Count; i++) { #>
+				new MarketLevelModel{ Id = <#= Market.Levels[i].Id #>, AmountReceivedLimit = <#= Market.Levels[i].AmountReceivedLimit #> },
+<# } #>
+                }
+            };
+        }// end MarketModel()
+
+		/// <summary>
+        /// Returns all ratios
+        /// </summary>
+        /// <returns></returns>
+		public static List<MarketResourceRatioModel> GetAllRatios(){
+
+			return new List<MarketResourceRatioModel>{
+<# for (int i = 0; i < MarketRatios.Count; i++) { #>
+				new MarketResourceRatioModel { resourceIdGiven = <#= MarketRatios[i].resourceIdGiven #>, resourceIdReceived = <#= MarketRatios[i].resourceIdReceived #>, amountReceivedForOneGiven = <#= MarketRatios[i].amountReceivedForOneGiven #> },
+<# } #>
+			};
+
+		}//End GetAllRatios();
+
+		/// <summary>
+        /// Positive means Amount * A = 1B. Negative means B / Amount = 1A. O means no ratio
+        /// </summary>
+        /// <param name="pResourceIdA"></param>
+        /// <param name="pResourceIdB"></param>
+        /// <returns></returns>
+        public static int GetAmountRatio(int pResourceIdGiven, int pResourceIdReceived)
+        {
+            MarketResourceRatioModel ratio;
+            //Try to get the ratio defined
+            ratio = GetAllRatios().Where(r => r.resourceIdGiven == pResourceIdGiven && r.resourceIdReceived == pResourceIdReceived).FirstOrDefault();
+
+            if (ratio != null)
+            {
+				return ratio.amountReceivedForOneGiven;                
+            }
+            else
+            {
+                //Otherwise, get the inverse
+                ratio = GetAllRatios().Where(r => r.resourceIdGiven == pResourceIdReceived && r.resourceIdReceived == pResourceIdGiven).FirstOrDefault();
+                if (ratio == null)
+                    return 0;
+                else
+                    return ratio.amountReceivedForOneGiven * -1;
+            }
+
+        }//End GetAmountRatio
+
+	}
+}

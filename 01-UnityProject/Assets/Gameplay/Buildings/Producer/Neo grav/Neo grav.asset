@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 316a54988846d404eafdd9d5b03e8f35, type: 3}
+  m_Name: Neo grav
+  m_EditorClassIdentifier: 
+  playerBuildingPrefab: {fileID: 1627400270588123582, guid: 386d189aae99d914591486bd6f9f33a0,
+    type: 3}
+  icon: {fileID: 21300000, guid: b71326b83da7b0a44a05595760bf0d8c, type: 3}
+  modelProducer:
+    id: 2
+    name: Neo grav
+    buildingType:
+      id: 2
+    constructionTime: 15
+    cost:
+      id: 4
+      resources:
+      - resourceId: 6
+        amount: 250
+        maximum: -1
+        used: 0
+    defaultResourceIdProduced: 2
+    levels:
+    - id: 1
+      cost:
+        id: 0
+        resources: []
+      persistentBagNeeded:
+        id: 32
+        resources:
+        - resourceId: 7
+          amount: 3
+          maximum: -1
+          used: 0
+      resourceIdProduced: 2
+      consumptionBag:
+        id: 0
+        resources: []
+      secondsToProduce: 300
+      amountProduced: 10
+    - id: 2
+      cost:
+        id: 5
+        resources:
+        - resourceId: 6
+          amount: 750
+          maximum: -1
+          used: 0
+      persistentBagNeeded:
+        id: 33
+        resources:
+        - resourceId: 7
+          amount: 3
+          maximum: -1
+          used: 0
+      resourceIdProduced: 2
+      consumptionBag:
+        id: 0
+        resources: []
+      secondsToProduce: 300
+      amountProduced: 15
+    - id: 3
+      cost:
+        id: 6
+        resources:
+        - resourceId: 6
+          amount: 2100
+          maximum: -1
+          used: 0
+      persistentBagNeeded:
+        id: 34
+        resources:
+        - resourceId: 7
+          amount: 4
+          maximum: -1
+          used: 0
+      resourceIdProduced: 2
+      consumptionBag:
+        id: 0
+        resources: []
+      secondsToProduce: 300
+      amountProduced: 20

@@ -1,0 +1,41 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ include file="../BaseTemplate.tt" once="true"#>
+<#@ parameter type="System.Collections.Generic.List<RTS.Models.BuildingModel>" name="Buildings" #>
+using System.Collections.Generic;
+
+namespace RTS.Models
+{
+    public static class BuildingData
+    {
+		
+		public static List<BuildingModel> GetAllBuildings(){
+		
+			return new List<BuildingModel>{
+<# for (int i = 0; i < Buildings.Count; i++) { #>
+				BuildingData.<#= ToPascalCase(Buildings[i].name) #>,
+<# } #>					
+			};
+		}
+
+        public static BuildingModel GetBuildingById(int pId)
+        {
+            switch (pId)
+            {
+<# for (int i = 0; i < Buildings.Count; i++) { #>
+				case <#= Buildings[i].id #> :
+					return BuildingData.<#= ToPascalCase(Buildings[i].name) #>;
+<# } #>
+				default:
+					return null;
+            }
+        }
+
+<#@ include file="BuildingCenterTemplate.tt" #>
+<#@ include file="BuildingProducerTemplate.tt" #>
+<#@ include file="BuildingPassiveTemplate.tt" #>
+
+	}
+
+}
+ 

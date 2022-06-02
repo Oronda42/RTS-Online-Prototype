@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 316a54988846d404eafdd9d5b03e8f35, type: 3}
+  m_Name: Brocco farm
+  m_EditorClassIdentifier: 
+  playerBuildingPrefab: {fileID: 1627400270588123582, guid: 5894b40a697f4df489bd9d80fcf91a39,
+    type: 3}
+  icon: {fileID: 21300000, guid: 8b229bff8d12f5245a7dc258b2e2fb9a, type: 3}
+  modelProducer:
+    id: 1
+    name: Brocco farm
+    buildingType:
+      id: 2
+    constructionTime: 15
+    cost:
+      id: 1
+      resources:
+      - resourceId: 6
+        amount: 200
+        maximum: -1
+        used: 0
+    defaultResourceIdProduced: 1
+    levels:
+    - id: 1
+      cost:
+        id: 0
+        resources: []
+      persistentBagNeeded:
+        id: 29
+        resources:
+        - resourceId: 7
+          amount: 1
+          maximum: -1
+          used: 0
+      resourceIdProduced: 1
+      consumptionBag:
+        id: 0
+        resources: []
+      secondsToProduce: 300
+      amountProduced: 10
+    - id: 2
+      cost:
+        id: 2
+        resources:
+        - resourceId: 6
+          amount: 600
+          maximum: -1
+          used: 0
+      persistentBagNeeded:
+        id: 30
+        resources:
+        - resourceId: 7
+          amount: 1
+          maximum: -1
+          used: 0
+      resourceIdProduced: 1
+      consumptionBag:
+        id: 0
+        resources: []
+      secondsToProduce: 300
+      amountProduced: 15
+    - id: 3
+      cost:
+        id: 3
+        resources:
+        - resourceId: 6
+          amount: 1800
+          maximum: -1
+          used: 0
+      persistentBagNeeded:
+        id: 31
+        resources:
+        - resourceId: 7
+          amount: 2
+          maximum: -1
+          used: 0
+      resourceIdProduced: 1
+      consumptionBag:
+        id: 0
+        resources: []
+      secondsToProduce: 300
+      amountProduced: 20

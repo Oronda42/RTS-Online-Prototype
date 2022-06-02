@@ -1,0 +1,94 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ include file="../BaseTemplate.tt" once="true"#>
+<#@ parameter type="System.Collections.Generic.List<RTS.Models.BuildingProducerModel>" name="BuildingsProducer" #>
+
+//TODO : Generate here ID 
+
+<# foreach (RTS.Models.BuildingProducerModel b in BuildingsProducer) { #>
+
+		public static BuildingProducerModel <#= ToPascalCase(b.name) #>
+			{
+				get { 
+					return new BuildingProducerModel {
+						id = <#= b.id #>,
+						name = "<#= b.name #>",
+						defaultResourceIdProduced = <#= b.defaultResourceIdProduced #>,
+						constructionTime = <#= b.constructionTime #>,
+						cost = new ResourceBagModel
+						{
+							id = <#=b.cost.id #>,
+	<# if (b.cost.id == 0) { #>
+							resources = new List<ResourceBagSlotModel>(),
+	<# } else { #>
+							resources = new List<ResourceBagSlotModel>{
+	<# foreach (RTS.Models.ResourceBagSlotModel rb in b.cost.resources) {#> 
+								new ResourceBagSlotModel(<#= rb.resourceId #>,<#= rb.amount #>,<#= rb.maximum #>,<#= rb.used #>),			
+	<# }#>
+							}
+	<# }#>
+						},
+						buildingType = new BuildingTypeModel
+						{
+							id = <#= b.buildingType.id #>
+						},
+						Levels = new List<BuildingProducerLevelModel>
+						{
+	<# foreach (RTS.Models.BuildingProducerLevelModel level in b.Levels) {#> 
+							new BuildingProducerLevelModel
+							{
+								id = <#= level.id #>,
+								secondsToProduce = <#= level.secondsToProduce #>,
+								amountProduced = <#= level.amountProduced #>,
+								resourceIdProduced = <#= level.resourceIdProduced #>,
+								cost = new ResourceBagModel
+								{
+									id = <#=level.cost.id #>,
+	<# if (level.cost.id == 0) { #>
+									resources = new List<ResourceBagSlotModel>(),
+	<# } else { #>
+									resources = new List<ResourceBagSlotModel>{
+	<# foreach (RTS.Models.ResourceBagSlotModel rb in level.cost.resources) {#> 
+										new ResourceBagSlotModel(<#= rb.resourceId #>,<#= rb.amount #>,<#= rb.maximum #>,<#= rb.used #>),			
+	<# }#>
+									}
+	<# }#>
+								},
+								consumptionBag = new ResourceBagModel
+								{
+									id = <#=level.consumptionBag.id #>,
+	<# if (level.consumptionBag.id == 0) { #>
+									resources = new List<ResourceBagSlotModel>(),
+	<# } else { #>
+									resources = new List<ResourceBagSlotModel>{
+	<# foreach (RTS.Models.ResourceBagSlotModel rb in level.consumptionBag.resources) {#> 
+										new ResourceBagSlotModel(<#= rb.resourceId #>,<#= rb.amount #>,<#= rb.maximum #>,<#= rb.used #>),			
+	<# }#>
+									}
+	<# }#>
+								},
+								persistentBagNeeded = new ResourceBagModel
+								{
+									id = <#=level.persistentBagNeeded.id #>,
+	<# if (level.persistentBagNeeded.id == 0) { #>
+									resources = new List<ResourceBagSlotModel>(),
+	<# } else { #>
+									resources = new List<ResourceBagSlotModel>{
+	<# foreach (RTS.Models.ResourceBagSlotModel rb in level.persistentBagNeeded.resources) {#> 
+										new ResourceBagSlotModel(<#= rb.resourceId #>,<#= rb.amount #>,<#= rb.maximum #>,<#= rb.used #>),			
+	<# }#>
+									}
+	<# }#>
+								},
+							},	
+	<# } #>
+						}
+					};
+				}
+			}
+
+
+<# } #>

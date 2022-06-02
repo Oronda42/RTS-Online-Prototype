@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 316a54988846d404eafdd9d5b03e8f35, type: 3}
+  m_Name: Mega Mine
+  m_EditorClassIdentifier: 
+  playerBuildingPrefab: {fileID: 1627400270588123582, guid: 9adeace9f22ceb6419a5dd9d09706216,
+    type: 3}
+  icon: {fileID: 21300000, guid: d87f73418a7c1c648a844315e94a5fa0, type: 3}
+  modelProducer:
+    id: 3
+    name: Mega mine
+    buildingType:
+      id: 2
+    constructionTime: 15
+    cost:
+      id: 7
+      resources:
+      - resourceId: 6
+        amount: 300
+        maximum: -1
+        used: 0
+    defaultResourceIdProduced: 3
+    levels:
+    - id: 1
+      cost:
+        id: 0
+        resources: []
+      persistentBagNeeded:
+        id: 35
+        resources:
+        - resourceId: 7
+          amount: 3
+          maximum: -1
+          used: 0
+      resourceIdProduced: 3
+      consumptionBag:
+        id: 0
+        resources: []
+      secondsToProduce: 300
+      amountProduced: 30
+    - id: 2
+      cost:
+        id: 8
+        resources:
+        - resourceId: 6
+          amount: 900
+          maximum: -1
+          used: 0
+      persistentBagNeeded:
+        id: 36
+        resources:
+        - resourceId: 7
+          amount: 3
+          maximum: -1
+          used: 0
+      resourceIdProduced: 3
+      consumptionBag:
+        id: 0
+        resources: []
+      secondsToProduce: 300
+      amountProduced: 40
+    - id: 3
+      cost:
+        id: 9
+        resources:
+        - resourceId: 6
+          amount: 2700
+          maximum: -1
+          used: 0
+      persistentBagNeeded:
+        id: 37
+        resources:
+        - resourceId: 7
+          amount: 4
+          maximum: -1
+          used: 0
+      resourceIdProduced: 3
+      consumptionBag:
+        id: 0
+        resources: []
+      secondsToProduce: 300
+      amountProduced: 50
